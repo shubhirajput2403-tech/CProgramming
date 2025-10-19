@@ -46,17 +46,17 @@ int main() {
                 displayArray(a, n);
                 break;
             case 2: {
-                int maxIndex = findMaxIndex(a, n);
+                int maxIndex = MaxIndex(a, n);
                 printf("Maximum element is %d at index %d\n", a[maxIndex], maxIndex);
                 break;
             }
             case 3: {
-                int minIndex = findMinIndex(a, n);
+                int minIndex = MinIndex(a, n);
                 printf("Minimum element is %d at index %d\n", a[minIndex], minIndex);
                 break;
             }
             case 4: {
-                float avg = findAverage(a, n);
+                float avg = Average(a, n);
                 printf("Average of array elements is: %.2f\n", avg);
                 break;
             }

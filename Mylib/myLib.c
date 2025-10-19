@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 //Function to reverse digits of a number
 int reverse(int n) {
     int rev = 0;
@@ -8,13 +9,11 @@ int reverse(int n) {
     }
     return rev;
 }
-//Function to check if a number is an Armstrong number
-#include <math.h>
+
 int isArmstrong(int number) {
-    int originalNumber, remainder, result = 0, n = 0;
+    int originalNumber = number, remainder, result = 0, n = 0;
 
-    originalNumber = number;
-
+    // Count digits
     while (originalNumber != 0) {
         originalNumber /= 10;
         n++;
@@ -22,24 +21,27 @@ int isArmstrong(int number) {
 
     originalNumber = number;
 
+    // Sum of powers
     while (originalNumber != 0) {
         remainder = originalNumber % 10;
-        result += pow(remainder, n);
+        result += (int)(pow(remainder, n) + 0.5);  // Rounding avoids float precision errors
         originalNumber /= 10;
     }
 
     return (result == number);
 }
-//Function to check if a number is an Adam number
-int isAdamNumber(int num) {  
-    
-    int square = num * num;
-    int revNum = reverse(num);
-    int revSquare = reverse(revNum);
-    revSquare = revSquare * revSquare;
 
-    return square == revSquare;
+//Function to check if a number is an Adam number
+
+int isAdamNumber(int num) {
+    int originalSquare = num * num;
+    int reversedNum = reverse(num);
+    int reversedSquare = reversedNum * reversedNum;
+    int reversedOriginalSquare = reverse(originalSquare);
+
+    return reversedSquare == reversedOriginalSquare;
 }
+
 //Function to check if a number is prime
 int isPrime(int n){
 
@@ -51,13 +53,12 @@ int isPrime(int n){
     return 1;
 }
 //Function to check if a number is prime and palindrome
-int ispalindrome(int n) {
-    int rev = 0;
-    int original = n;
-    while (n>0) {
-        rev = n%10;
-        rev = rev*10; 
-        n = n/10;
+int isPalindrome(int n) {
+    int original = n, rev = 0;
+    while (n > 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
     }
     return rev == original;
 }
+

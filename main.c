@@ -18,19 +18,19 @@ int main() {
         scanf("%d", &number);
         switch (choice) {
             case 1:
-                if (isArmstrong(number))
+                if (isArmstrong(number)==1)
                     printf("%d is an Armstrong number.\n", number);
                 else
                     printf("%d is not an Armstrong number.\n", number);
                 break;
             case 2:
-                if (isAdamNumber(number))
+                if (isAdamNumber(number)==1)
                     printf("%d is an Adam number.\n", number);
                 else
                     printf("%d is not an Adam number.\n", number);
                 break;
             case 3:
-                if (isPalindrome(number) && isPrime(number))
+                if (isPalindrome(number)==1 && isPrime(number)==1)
                     printf("%d is a Prime Palindrome number.\n", number);
                 else
                     printf("%d is not a Prime Palindrome number.\n", number);
