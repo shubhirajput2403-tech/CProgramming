@@ -77,7 +77,7 @@ Use GCC compiler to compile and run the programs.
     gcc mainArray.c MylibArray/myLibArray.c -o arrayOps
 
 >>> Compile Numerical Program:
-    gcc main.c -o numOps
+    gcc main.c  Mylib/myLib.c -o numOps
 
 >>> Run the Executables:
     ./arrayOps      (for array operations)
